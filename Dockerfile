@@ -6,6 +6,7 @@ RUN rm -fr /app
 ADD vtigercrm /app
 ADD customphp.ini /etc/php5/apache2/conf.d/customphp.ini
 ADD vtigercron /etc/cron.d/
+ADD supervisord-cron.conf /etc/supervisor/conf.d/supervisord-cron.conf
 RUN chown -R www-data:www-data /app
 RUN find /app -type f -exec chmod 644 {} \;
 RUN find /app -type d -exec chmod 755 {} \;
