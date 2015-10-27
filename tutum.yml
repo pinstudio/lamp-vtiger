@@ -1,0 +1,5 @@
+lamp:
+  image: tutum/yfer/vtiger
+  ports:
+    - 80:80
+    - 3306:3306
