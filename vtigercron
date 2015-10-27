@@ -1,0 +1,1 @@
+*/5 * * * * www-data /usr/bin/flock -n /tmp/vtigercron.lock /app/cron/vtigercron.sh

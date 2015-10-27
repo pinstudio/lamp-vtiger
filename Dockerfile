@@ -5,7 +5,9 @@ RUN php5enmod imap
 RUN rm -fr /app
 ADD vtigercrm /app
 ADD customphp.ini /etc/php5/apache2/conf.d/customphp.ini
+ADD vtigercron /etc/cron.d/
 RUN chown -R www-data:www-data /app
 RUN chmod -R 755 /app
+RUN chmod +x /app/cron/vtigercron.sh
 EXPOSE 80 3306
 CMD ["/run.sh"]
