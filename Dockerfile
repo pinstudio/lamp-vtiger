@@ -2,9 +2,13 @@ FROM tutum/lamp:latest
 MAINTAINER Barabanov Mikhail <Barabanov.Mikle@gmail.com> https://github.com/yfer
 
 # install and enable vtiger module references
-RUN apt-get update && apt-get -y install binutils cpp flex gcc  libarchive-zip-perl libc6-dev libpcre3 libpopt-dev lynx m4 make ncftp nmap openssl perl perl-modules unzip zip zlib1g-dev autoconf automake1.9 libtool bison autotools-dev gcc libpng12-dev libjpeg62-dev libfreetype6-dev libssl-dev libxml2-dev libxml2 g++ gawk php5-gd php5-imap php5-curl
+RUN apt-get update && apt-get -y install binutils cpp flex gcc  libarchive-zip-perl libc6-dev libpcre3 libpopt-dev lynx m4 make ncftp nmap openssl perl perl-modules unzip zip zlib1g-dev autoconf automake1.9 libtool bison autotools-dev gcc libpng12-dev libjpeg62-dev libfreetype6-dev libssl-dev libxml2-dev libxml2 g++ gawk php5-gd php5-imap php5-curl php-pear php5-dev
 # TODO: check php5-zlib libcompress-zlib-perl
 RUN php5enmod imap
+RUN pecl install timezonedb
+RUN localedef -i ru_RU -f CP1251 CP1251
+RUN localedef -i ru_RU -f UTF-8 UTF-8
+RUN localedef -i en_US -f ISO-8859-1 ISO-8859-1
 
 # download, untar and directory rights
 RUN rm -fr /app
