@@ -2,8 +2,9 @@ FROM tutum/lamp:latest
 MAINTAINER Barabanov Mikhail <Barabanov.Mikle@gmail.com> https://github.com/yfer
 
 # install and enable vtiger module references
-RUN apt-get update && apt-get -y install php5-gd php5-imap php5-curl php5-ldap
+RUN apt-get update && apt-get -y install php5-gd php5-imap php5-curl php5-ldap php-pear
 RUN php5enmod imap
+RUN pear install Net_SMTP Mail_mime
 
 # download, untar and directory rights
 RUN rm -fr /app
