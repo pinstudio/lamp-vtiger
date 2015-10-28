@@ -11,7 +11,7 @@ ENV VTIGER_SOURCE http://sources.pinstudio.ru/vtigercrm6.3.0.tar.gz
 ADD $VTIGER_SOURCE /vtiger.tar.gz
 RUN tar zxf vtiger.tar.gz
 RUN mv /vtigercrm /app
-#RUN rm /vtiger.tar.gz
+RUN rm /vtiger.tar.gz
 RUN chown -R www-data:www-data /app
 RUN find /app -type f -exec chmod 644 {} \;
 RUN find /app -type d -exec chmod 755 {} \;
