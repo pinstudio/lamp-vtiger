@@ -7,7 +7,7 @@ RUN php5enmod imap
 
 # download, untar and directory rights
 RUN rm -fr /app
-ENV VTIGER_SOURCE http://sources.pinstudio.ru/vtigercrm6.3.0.tar.gz
+ENV VTIGER_SOURCE http://sources.pinstudio.ru/salesplatform-vtigercrm-6.3.0-201507.tar.gz
 ADD $VTIGER_SOURCE /vtiger.tar.gz
 RUN tar zxf vtiger.tar.gz
 RUN mv /vtigercrm /app
