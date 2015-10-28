@@ -20,6 +20,9 @@ RUN find /app -type d -exec chmod 755 {} \;
 # vtiger specific php.ini settings
 ADD customphp.ini /etc/php5/apache2/conf.d/customphp.ini
 
+# vtiger specific mysql settings
+ADD utf8.cnf /etc/mysql/conf.d/utf8.cnf
+
 # vtiger scheduler
 RUN chmod +x /app/cron/vtigercron.sh
 ADD vtigercron /etc/cron.d/

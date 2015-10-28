@@ -1,0 +1,9 @@
+[mysqld]
+collation_server = utf8_general_ci
+character_set_server = utf8
+default-character-set = utf8
+init_connect = 'SET collation_connection = utf8_general_ci'
+init_connect = 'SET NAMES utf8'
+
+[mysql]
+default-character-set = utf8
