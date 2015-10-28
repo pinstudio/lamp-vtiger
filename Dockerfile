@@ -2,7 +2,7 @@ FROM tutum/lamp:latest
 MAINTAINER Barabanov Mikhail <Barabanov.Mikle@gmail.com> https://github.com/yfer
 
 # install and enable vtiger module references
-RUN apt-get update && apt-get -y install php5-gd php5-imap php5-curl
+RUN apt-get update && apt-get -y install php5-gd php5-imap php5-curl php5-ldap
 RUN php5enmod imap
 
 # download, untar and directory rights
@@ -18,6 +18,9 @@ RUN find /app -type d -exec chmod 755 {} \;
 
 # vtiger specific php.ini settings
 ADD customphp.ini /etc/php5/apache2/conf.d/customphp.ini
+
+# vtiger specific 
+ADD virtualhost.conf /etc/apache2/sites-available/000-default.conf
 
 # vtiger scheduler
 RUN chmod +x /app/cron/vtigercron.sh
