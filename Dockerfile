@@ -10,7 +10,7 @@ RUN rm -fr /app
 ENV VTIGER_SOURCE http://sources.pinstudio.ru/YetiForceCRM-2.3.49.tar.gz
 ADD $VTIGER_SOURCE /vtiger.tar.gz
 RUN tar zxf vtiger.tar.gz
-RUN mv /vtigercrm /app
+RUN mv /YetiForceCRM-2.3.49 /app
 RUN rm /vtiger.tar.gz
 RUN chown -R www-data:www-data /app
 RUN find /app -type f -exec chmod 644 {} \;
