@@ -6,6 +6,7 @@ RUN php5enmod imap
 # add vtiger files and file rights/modes
 RUN rm -fr /app
 ADD vtigercrm /app
+ADD $vtigersource /app
 RUN chown -R www-data:www-data /app
 RUN find /app -type f -exec chmod 644 {} \;
 RUN find /app -type d -exec chmod 755 {} \;
