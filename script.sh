@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # install and enable vtiger module references
-#apt-get update && 
+apt-get update
 apt-get -y install binutils cpp flex gcc  libarchive-zip-perl libc6-dev libpcre3 libpopt-dev lynx m4 make ncftp nmap openssl perl perl-modules unzip zip zlib1g-dev autoconf automake1.9 libtool bison autotools-dev gcc libpng12-dev libjpeg62-dev libfreetype6-dev libssl-dev libxml2-dev libxml2 g++ gawk php5-gd php5-imap php5-curl php-pear php5-dev
 # TODO: check php5-zlib libcompress-zlib-perl
 php5enmod imap
