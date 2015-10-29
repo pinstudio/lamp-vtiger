@@ -2,7 +2,7 @@
 
 # install and enable vtiger module references
 apt-get update
-apt-get -y install php5-gd php5-imap php5-curl
+apt-get -y install php5-gd php5-imap php5-curl wget
 php5enmod imap
 
 # download, untar and directory rights
